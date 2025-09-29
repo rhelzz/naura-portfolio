@@ -1,23 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Playfair Display for elegant headers and Montserrat for body text -->
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Naura Fioni Portfolio - Web Developer & Content Creator | PPLG SMK</title>
+    <meta name="title" content="Naura Fioni Portfolio - Web Developer & Content Creator | PPLG SMK">
+    <meta name="description" content="Portfolio Naura Fioni Syura Mazaya - Siswa PPLG SMK ahli Web Development, Game Design, UI/UX Design, dan Content Creator. Berpengalaman Laravel, TailwindCSS, Figma dengan 50K+ views konten.">
+    <meta name="keywords" content="Naura Fioni, Naura Fioni Portfolio, Web Developer Indonesia, Content Creator, PPLG, SMK Developer, Laravel Developer, Game Designer, UI UX Designer, Portfolio Indonesia, Naura Fioni Syura, Developer Muda">
+    <meta name="author" content="Naura Fioni Syura Mazaya">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://naura-fioni-portfolio.vercel.app/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naura-fioni-portfolio.vercel.app/">
+    <meta property="og:title" content="Naura Fioni Portfolio - Web Developer & Content Creator">
+    <meta property="og:description" content="Portfolio profesional Naura Fioni - Web Developer, Game Designer, dan Content Creator dengan pengalaman Laravel, UI/UX Design, dan konten viral 50K+ views.">
+    <meta property="og:image" content="https://naura-fioni-portfolio.vercel.app/profile.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Naura Fioni Portfolio">
+    <meta property="og:locale" content="id_ID">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://naura-fioni-portfolio.vercel.app/">
+    <meta property="twitter:title" content="Naura Fioni Portfolio - Web Developer & Content Creator">
+    <meta property="twitter:description" content="Portfolio profesional Naura Fioni - Web Developer, Game Designer, dan Content Creator dengan pengalaman Laravel, UI/UX Design, dan konten viral 50K+ views.">
+    <meta property="twitter:image" content="https://naura-fioni-portfolio.vercel.app/profile.jpeg">
+    <meta property="twitter:creator" content="@nauraaasyura">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#D4A373">
+    <meta name="msapplication-TileColor" content="#D4A373">
+    <meta name="application-name" content="Naura Fioni Portfolio">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect untuk performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Naura Fioni Syura Mazaya",
+        "alternateName": "Naura Fioni",
+        "url": "https://naura-fioni-portfolio.vercel.app/",
+        "image": "https://naura-fioni-portfolio.vercel.app/profile.jpeg",
+        "sameAs": [
+            "https://www.instagram.com/nauraaasyura/",
+            "https://www.tiktok.com/@akusyura18",
+            "https://naurahfionisyura.kuadratdev.com/"
+        ],
+        "jobTitle": "Web Developer & Content Creator",
+        "worksFor": {
+            "@type": "EducationalOrganization",
+            "name": "SMKN 01 Ciomas"
+        },
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "SMKN 01 Ciomas",
+            "department": "Rekayasa Perangkat Lunak dan Gim (PPLG)"
+        },
+        "knowsAbout": [
+            "Web Development",
+            "Laravel",
+            "Game Design",
+            "UI/UX Design", 
+            "Content Creation",
+            "TailwindCSS",
+            "Figma",
+            "Adobe XD"
+        ],
+        "description": "Siswa SMK jurusan Rekayasa Perangkat Lunak dengan keahlian dalam pengembangan aplikasi, desain UI/UX, game design, dan content creation. Berpengalaman dengan Laravel, TailwindCSS, Figma, dan telah mencapai 50K+ views dalam konten digital."
+    }
+    </script>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Swiper JS for Carousels -->
+    
+    <!-- Swiper JS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwindconfig.js"></script>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Analytics (Ganti dengan GA4 tracking ID Anda) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
 </head>
 <body class="smooth-scroll">
     <!-- Custom Cursor -->
@@ -78,7 +179,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Update dengan heading yang lebih SEO friendly -->
     <section class="min-h-screen flex items-center justify-center bg-cream relative overflow-hidden">
         <div class="absolute inset-0 z-0 image-reveal revealed">
             <img src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Beauty Model Hero" class="w-full h-full object-cover opacity-90">
@@ -86,8 +187,8 @@
         <div class="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent z-1"></div>
         <div class="container mx-auto px-6 py-24 relative z-10 text-center text-white hero-text-shadow">
             <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl tracking-wider mb-6 leading-tight typewriter inline-block mx-automd text-white">Naura Fioni</h1>
-                <p class="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-10 animate-fade-in">Designer & Content Creator</p>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl tracking-wider mb-6 leading-tight typewriter inline-block mx-auto text-white">Naura Fioni</h1>
+                <h2 class="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-10 animate-fade-in">Web Developer, Game Designer & Content Creator Portfolio</h2>
                 <a href="#contact" class="px-8 py-3 border border-white text-white hover:bg-white hover:text-charcoal transition-all duration-300 tracking-wider text-sm inline-block relative group overflow-hidden">
                     <span class="relative z-10 group-hover:text-charcoal transition-colors">GET IN TOUCH</span>
                     <span class="absolute inset-0 bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
@@ -203,7 +304,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - Update dengan konten yang lebih SEO friendly -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
@@ -212,15 +313,15 @@
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1000" data-aos-delay="200">
                     <h2 class="font-serif text-4xl mb-8 relative overflow-hidden">
-                        About Me
+                        Tentang Naura Fioni - Web Developer & Content Creator
                         <span class="block w-24 h-1 bg-accent mt-4"></span>
                     </h2>
-                    <p class="mb-6 leading-relaxed text-gray-700">Saya, Naurah Fioni Syura Mazaya, adalah siswa SMK jurusan Rekayasa Perangkat Lunak dengan keahlian dalam
-                        pengembangan aplikasi dan desain UI/UX. Memiliki kemampuan dalam merancang antar muka yang menarik dan
-                        fungsional, serta pengalaman menggunakan alat desain seperti Figma dan Adobe XD. Berkomitmen untuk menciptakan
+                    <p class="mb-6 leading-relaxed text-gray-700">Saya, <strong>Naurah Fioni Syura Mazaya</strong>, adalah siswa SMK jurusan Rekayasa Perangkat Lunak (PPLG) dengan keahlian dalam
+                        pengembangan aplikasi web menggunakan <strong>Laravel</strong>, desain UI/UX dengan <strong>Figma</strong>, dan <strong>game design</strong>. Memiliki pengalaman dalam merancang antarmuka yang menarik dan
+                        fungsional, serta menggunakan alat desain seperti Adobe XD. Berkomitmen untuk menciptakan
                         aplikasi yang tidak hanya efektif secara teknis, tetapi juga mudah digunakan dan menarik secara visual.</p>
-                    <p class="mb-6 leading-relaxed text-gray-700">Dalam pelajaran
-                        PKWU,saya pernah berperan sebagai “CONTENT CREATOR” guna untuk memperkuat branding perusahaan,
+                    <p class="mb-6 leading-relaxed text-gray-700">Sebagai <strong>content creator</strong> yang berpengalaman, saya telah mencapai <strong>50K+ views</strong> di media sosial
+                        dalam proyek PKWU, berperan sebagai "CONTENT CREATOR" untuk memperkuat branding perusahaan,
                         meningkatkan visibilitas di industri IT, dan menarik audiens lebih luas. Saya dapat menghasilkan konten yang jelas dan
                         menarik untuk menjelaskan solusi teknis, meningkatkan engagement, serta memperkuat posisi perusahaan sebagai otoritas di
                         bidang teknologi.</p>          
@@ -243,10 +344,10 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section - Update heading -->
     <section id="portfolio" class="py-20 bg-cream">
         <div class="container mx-auto px-6">
-            <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Portfolio</h2>
+            <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Portfolio Naura Fioni - Proyek Web Development & Content Creation</h2>
             <p class="text-center max-w-xl mx-auto mb-16 text-gray-600" data-aos="fade-up" data-aos-delay="100">
                 Kumpulan hasil karya terbaik dari berbagai bidang yang saya kerjakan.
             </p>
@@ -389,15 +490,15 @@
     </section>
 
 
-    <!-- Services Section -->
+    <!-- Services Section - Update heading -->
     <section id="services" class="py-20 bg-cream relative overflow-hidden">
         <div class="absolute -right-32 -top-32 w-64 h-64 rounded-full bg-beige opacity-50"></div>
         <div class="absolute -left-32 -bottom-32 w-64 h-64 rounded-full bg-beige opacity-50"></div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Services</h2>
+            <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Layanan Web Development & Content Creation</h2>
             <p class="text-center max-w-xl mx-auto mb-16 text-gray-600" data-aos="fade-up" data-aos-delay="100">
-                Layanan kreatif dan teknologi yang saya tawarkan di bidang pengembangan perangkat lunak, desain gim, dan konten digital.
+                Layanan profesional web development Laravel, game design, UI/UX design, dan content creation untuk bisnis dan personal branding.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">

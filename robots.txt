@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://naura-fioni-portfolio.vercel.app/sitemap.xml
+
+# Disallow crawling of unnecessary files
+Disallow: /tailwindconfig.js
+Disallow: /script.js
+Disallow: /style.css
