@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Playfair Display for elegant headers and Montserrat for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper JS for Carousels -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="tailwindconfig.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="smooth-scroll">
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed inset-0 bg-cream z-50 flex flex-col justify-center items-center space-y-8 p-8 lg:hidden">
+        <button id="close-menu" class="absolute top-6 right-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a href="#" class="font-serif text-3xl tracking-widest font-light mb-10">SOPHIA</a>
+        <a href="#about" class="text-xl hover:text-accent transition-colors py-2 mobile-nav-link">ABOUT</a>
+        <a href="#portfolio" class="text-xl hover:text-accent transition-colors py-2 mobile-nav-link">PORTFOLIO</a>
+        <a href="#experience" class="text-xl hover:text-accent transition-colors py-2 mobile-nav-link">EXPERIENCE</a>
+        <a href="#services" class="text-xl hover:text-accent transition-colors py-2 mobile-nav-link">SERVICES</a>
+        <a href="#contact" class="text-xl hover:text-accent transition-colors py-2 mobile-nav-link">CONTACT</a>
+        <div class="mt-10 pt-10 border-t border-beige w-32 flex justify-center space-x-6">
+            <a href="#" class="hover:text-accent transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+            </a>
+            <a href="#" class="hover:text-accent transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-cream/80 backdrop-blur-md z-40 border-b border-beige">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="font-serif text-2xl tracking-widest font-light relative overflow-hidden group">
+                    <span class="inline-block transition-transform duration-500 group-hover:translate-y-[-100%]">Naura</span>
+                    <span class="absolute left-0 top-0 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 text-accent">Fioni</span>
+                </a>
+                <div class="hidden lg:flex space-x-10 text-sm tracking-wider">
+                    <a href="#about" class="nav-link hover:text-accent transition-colors">ABOUT</a>
+                    <a href="#portfolio" class="nav-link hover:text-accent transition-colors">PORTFOLIO</a>
+                    <a href="#experience" class="nav-link hover:text-accent transition-colors">EXPERIENCE</a>
+                    <a href="#services" class="nav-link hover:text-accent transition-colors">SERVICES</a>
+                    <a href="#contact" class="nav-link hover:text-accent transition-colors">CONTACT</a>
+                </div>
+                <button class="lg:hidden menu-toggle">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 z-0 image-reveal revealed">
+            <img src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Beauty Model Hero" class="w-full h-full object-cover opacity-90">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent z-1"></div>
+        <div class="container mx-auto px-6 py-24 relative z-10 text-center text-white hero-text-shadow">
+            <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl tracking-wider mb-6 leading-tight typewriter inline-block mx-automd text-white">Naura Fioni</h1>
+                <p class="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-10 animate-fade-in">Designer & Content Creator</p>
+                <a href="#contact" class="px-8 py-3 border border-white text-white hover:bg-white hover:text-charcoal transition-all duration-300 tracking-wider text-sm inline-block relative group overflow-hidden">
+                    <span class="relative z-10 group-hover:text-charcoal transition-colors">GET IN TOUCH</span>
+                    <span class="absolute inset-0 bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
+            </div>
+            
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#about" class="text-white p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Ambassador Section -->
+    <section class="brand-ambassador-section py-16 relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Section Title -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="font-serif text-3xl md:text-4xl mb-4">Brand Ambassador</h2>
+                <div class="decorative-divider mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Bangga menjadi brand ambassador untuk brand-brand terpercaya, menciptakan konten autentik dan engaging untuk audience.
+                </p>
+            </div>
+
+            <!-- Brand Logo & Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-16">
+                <!-- Brand Logo -->
+                <div class="md:col-span-1 text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="floating-brand">
+                        <!-- Logo dengan font yang bagus -->
+                        <div class="brand-logo-text mx-auto w-32 h-32 md:w-36 md:h-36 bg-gradient-to-br from-accent to-beige rounded-full flex items-center justify-center shadow-lg">
+                            <span class="text-white font-serif text-2xl md:text-3xl font-bold tracking-wider">SUNDAY</span>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-xl mt-4 text-charcoal">Brand Partner</h3>
+                </div>
+
+                <!-- Brand Stats -->
+                <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="brand-stats" data-aos="fade-up" data-aos-delay="200">
+                        <div class="brand-stats-number counter" data-target="50">0</div>
+                        <div class="brand-stats-label">K+ Views</div>
+                    </div>
+                    <div class="brand-stats" data-aos="fade-up" data-aos-delay="300">
+                        <div class="brand-stats-number counter" data-target="134">0</div>
+                        <div class="brand-stats-label">Content Created</div>
+                    </div>
+                    <div class="brand-stats" data-aos="fade-up" data-aos-delay="400">
+                        <div class="brand-stats-number counter" data-target="85">0</div>
+                        <div class="brand-stats-label">% Engagement</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ambassador Photos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Photo 1 -->
+                <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="100">
+                    <div class="brand-collaboration-badge">Collaboration</div>
+                    <img src="brand/brand-1.jpg" alt="Brand Ambassador Photo 1">
+                    <div class="ambassador-overlay">
+                        <h4 class="font-serif text-lg mb-2">Product Launch Campaign</h4>
+                        <p class="text-sm opacity-90">Creating engaging content for new product introduction with authentic storytelling approach.</p>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="200">
+                    <div class="brand-collaboration-badge">Partnership</div>
+                    <img src="brand/brand-2.jpg" alt="Brand Ambassador Photo 2">
+                    <div class="ambassador-overlay">
+                        <h4 class="font-serif text-lg mb-2">Behind The Scenes</h4>
+                        <p class="text-sm opacity-90">Professional photoshoot session showcasing brand values and lifestyle integration.</p>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="300">
+                    <div class="brand-collaboration-badge">Featured</div>
+                    <img src="brand/brand-3.jpg" alt="Brand Ambassador Photo 3">
+                    <div class="ambassador-overlay">
+                        <h4 class="font-serif text-lg mb-2">Social Media Campaign</h4>
+                        <p class="text-sm opacity-90">High-performance social content that generated exceptional engagement and brand awareness.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-gray-600 mb-6">Interested in collaboration opportunities?</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <!-- TikTok Button -->
+                    <a href="https://www.tiktok.com/@akusyura18?_t=ZS-907ovpHbwox&_r=1" class="inline-flex items-center px-8 py-3 border border-charcoal text-charcoal hover:bg-charcoal hover:text-cream transition-all duration-300 tracking-wider text-sm group">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/>
+                        </svg>
+                        <span class="group-hover:text-cream transition-colors">LET'S WORK TOGETHER</span>
+                    </a>
+                    
+                    <!-- Instagram Button -->
+                    <a href="https://www.instagram.com/nauraaasyura/" class="inline-flex items-center px-8 py-3 border border-charcoal text-charcoal hover:bg-charcoal hover:text-cream transition-all duration-300 tracking-wider text-sm group">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                        <span class="group-hover:text-cream transition-colors">LET'S WORK TOGETHER</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 image-reveal" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000">
+                    <img src="profile.jpeg" alt="About Sophia" class="w-full shadow-lg">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1000" data-aos-delay="200">
+                    <h2 class="font-serif text-4xl mb-8 relative overflow-hidden">
+                        About Me
+                        <span class="block w-24 h-1 bg-accent mt-4"></span>
+                    </h2>
+                    <p class="mb-6 leading-relaxed text-gray-700">Saya, Naurah Fioni Syura Mazaya, adalah siswa SMK jurusan Rekayasa Perangkat Lunak dengan keahlian dalam
+                        pengembangan aplikasi dan desain UI/UX. Memiliki kemampuan dalam merancang antar muka yang menarik dan
+                        fungsional, serta pengalaman menggunakan alat desain seperti Figma dan Adobe XD. Berkomitmen untuk menciptakan
+                        aplikasi yang tidak hanya efektif secara teknis, tetapi juga mudah digunakan dan menarik secara visual.</p>
+                    <p class="mb-6 leading-relaxed text-gray-700">Dalam pelajaran
+                        PKWU,saya pernah berperan sebagai “CONTENT CREATOR” guna untuk memperkuat branding perusahaan,
+                        meningkatkan visibilitas di industri IT, dan menarik audiens lebih luas. Saya dapat menghasilkan konten yang jelas dan
+                        menarik untuk menjelaskan solusi teknis, meningkatkan engagement, serta memperkuat posisi perusahaan sebagai otoritas di
+                        bidang teknologi.</p>          
+                    <div class="flex flex-col sm:flex-row gap-6 counters">
+                        <div class="counter-item" data-target="2" data-suffix="+">
+                            <p class="text-4xl font-serif counter">0</p>
+                            <p class="text-sm uppercase tracking-wider mt-1">Years Experience</p>
+                        </div>
+                        <div class="counter-item" data-target="50" data-suffix="+">
+                            <p class="text-4xl font-serif counter">0</p>
+                            <p class="text-sm uppercase tracking-wider mt-1">Posted Content</p>
+                        </div>
+                        <div class="counter-item" data-target="5" data-suffix="+">
+                            <p class="text-4xl font-serif counter">0</p>
+                            <p class="text-sm uppercase tracking-wider mt-1">Finished Projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Portfolio</h2>
+            <p class="text-center max-w-xl mx-auto mb-16 text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                Kumpulan hasil karya terbaik dari berbagai bidang yang saya kerjakan.
+            </p>
+
+            <!-- Portfolio Filter -->
+            <div class="flex justify-center mb-10 flex-wrap gap-2" data-aos="fade-up" data-aos-delay="200">
+                <button class="portfolio-filter-btn active px-5 py-2 text-sm tracking-wider hover:text-accent transition-colors" data-filter="all">SEMUA</button>
+                <button class="portfolio-filter-btn px-5 py-2 text-sm tracking-wider hover:text-accent transition-colors" data-filter="programming">PEMROGRAMAN</button>
+                <button class="portfolio-filter-btn px-5 py-2 text-sm tracking-wider hover:text-accent transition-colors" data-filter="designing">DESAIN</button>
+                <button class="portfolio-filter-btn px-5 py-2 text-sm tracking-wider hover:text-accent transition-colors" data-filter="content-creator">KREATOR KONTEN</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 portfolio-grid">
+                <!-- Portfolio Item 1: Programming -->
+                <div class="portfolio-item programming hover-effect" data-aos="fade-up" data-aos-delay="100">
+                    <img src="portfolio-1.png" alt="Programming Project" class="w-full h-auto bg-white">
+                    <div class="overlay">
+                        <div class="text-white text-center px-4">
+                            <h3 class="font-serif text-xl mb-2">Aplikasi Portofolio Dinamis</h3>
+                            <p class="text-sm mb-3">Project Pemrograman Laravel 11</p>
+                            <a href="https://naurahfionisyura.kuadratdev.com/" class="inline-block border border-white text-white px-4 py-2 text-sm hover:bg-white hover:text-charcoal transition-all duration-300">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2: Designing -->
+                <div class="portfolio-item designing hover-effect" data-aos="fade-up" data-aos-delay="200">
+                    <img src="portfolio-2.png" alt="UI Design" class="w-full h-auto">
+                    <div class="overlay">
+                        <div class="text-white text-center px-4">
+                            <h3 class="font-serif text-xl mb-2">Desain UI/UX Game Development</h3>
+                            <p class="text-sm mb-3">Figma Mockup</p>
+                            <a href="#" class="inline-block border border-white text-white px-4 py-2 text-sm hover:bg-white hover:text-charcoal transition-all duration-300">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3: Content Creator -->
+                <div class="portfolio-item content-creator hover-effect" data-aos="fade-up" data-aos-delay="300">
+                    <img src="portfolio-3.png" alt="Content Creator Project" class="w-full h-auto">
+                    <div class="overlay">
+                        <div class="text-white text-center px-4">
+                            <h3 class="font-serif text-xl mb-2">Video Promosi Produk</h3>
+                            <p class="text-sm mb-3">Kreator Konten PKWU</p>
+                            <a href="https://www.instagram.com/casingplass/" class="inline-block border border-white text-white px-4 py-2 text-sm hover:bg-white hover:text-charcoal transition-all duration-300">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" id="viewAllBtn" class="view-all-btn px-8 py-3 border border-charcoal text-charcoal hover:bg-charcoal hover:text-cream transition-all duration-300 tracking-wider text-sm inline-block relative group">
+                    <span class="relative z-10 group-hover:text-cream transition-colors">VIEW ALL WORK</span>
+                    <span class="absolute inset-0 bg-charcoal transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Experience</h2>
+            <p class="text-center max-w-xl mx-auto mb-16 text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                Perjalanan profesional dan projek selama menempuh pendidikan di jurusan PPLG.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Projects -->
+                <div data-aos="fade-right">
+                    <h3 class="font-serif text-2xl mb-6 flex items-center">
+                        <span class="text-accent mr-3">01</span>
+                        <span>Project & Roles</span>
+                    </h3>
+                    <div class="space-y-10 timeline">
+                        <div class="timeline-item relative pl-8">
+                            <span class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent"></span>
+                            <span class="absolute left-1.5 top-4 w-1 h-24 bg-beige"></span>
+                            <h4 class="font-medium text-lg">Belajar Bersama Saka</h4>
+                            <p class="text-sm text-accent mb-2">Game Designer • 2025</p>
+                            <p class="text-gray-700">
+                                Merancang antarmuka dan alur permainan untuk game edukasi islami interaktif yang ditujukan bagi anak-anak.
+                            </p>
+                        </div>
+                        <div class="timeline-item relative pl-8">
+                            <span class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent"></span>
+                            <span class="absolute left-1.5 top-4 w-1 h-24 bg-beige"></span>
+                            <h4 class="font-medium text-lg">Belajar Bersama Saka 2.0</h4>
+                            <p class="text-sm text-accent mb-2">Designer • 2025</p>
+                            <p class="text-gray-700">
+                                Membuat asset untuk pengembangan permainan game belajar bersama saka.
+                            </p>
+                        </div>
+                        <div class="timeline-item relative pl-8">
+                            <span class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent"></span>
+                            <h4 class="font-medium text-lg">Portofolio Pribadi</h4>
+                            <p class="text-sm text-accent mb-2">Developer • 2024</p>
+                            <p class="text-gray-700">
+                                Membangun website portofolio pribadi menggunakan Laravel 11 dan TailwindCSS sebagai showcase skill PPLG.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Creation -->
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="font-serif text-2xl mb-6 flex items-center">
+                        <span class="text-accent mr-3">02</span>
+                        <span>Content Creation & Entrepreneurship</span>
+                    </h3>
+                    <div class="space-y-10 timeline">
+                        <div class="timeline-item relative pl-8">
+                            <span class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent"></span>
+                            <span class="absolute left-1.5 top-4 w-1 h-24 bg-beige"></span>
+                            <h4 class="font-medium text-lg">PKWU – Kewirausahaan</h4>
+                            <p class="text-sm text-accent mb-2">Content Creator • 2024</p>
+                            <p class="text-gray-700">
+                                Membuat konten digital (video & desain) untuk promosi produk hasil praktik kewirausahaan dengan total penayangan lebih dari 20.000 views.
+                            </p>
+                        </div>
+                        <div class="timeline-item relative pl-8">
+                            <span class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent"></span>
+                            <span class="absolute left-1.5 top-4 w-1 h-24 bg-beige"></span>
+                            <h4 class="font-medium text-lg">Digital Campaign</h4>
+                            <p class="text-sm text-accent mb-2">Content Creator • 2024</p>
+                            <p class="text-gray-700">
+                                Mengelola strategi konten media sosial untuk meningkatkan awareness terhadap produk kewirausahaan siswa SMK berbasis digital.
+                            </p>
+                        </div>
+                        <div class="timeline-item relative pl-8">
+                            <span class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent"></span>
+                            <h4 class="font-medium text-lg">High Permormance</h4>
+                            <p class="text-sm text-accent mb-2">Content Creator • 2024</p>
+                            <p class="text-gray-700">
+                                Mendapatkan ribuan views hanya dalam beberapa bulan dengan ide konten yang kreatif dan menarik bagi para penonton, dan mengenalkan produk tim saya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-cream relative overflow-hidden">
+        <div class="absolute -right-32 -top-32 w-64 h-64 rounded-full bg-beige opacity-50"></div>
+        <div class="absolute -left-32 -bottom-32 w-64 h-64 rounded-full bg-beige opacity-50"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Services</h2>
+            <p class="text-center max-w-xl mx-auto mb-16 text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                Layanan kreatif dan teknologi yang saya tawarkan di bidang pengembangan perangkat lunak, desain gim, dan konten digital.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: Game Design -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-500 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-6 text-3xl text-accent group-hover:scale-110 transform transition-transform">🎮</div>
+                    <h3 class="font-serif text-2xl mb-4 group-hover:text-accent transition-colors">Game Design</h3>
+                    <p class="text-gray-700 mb-6">
+                        Desain antarmuka, mekanik permainan, dan alur cerita untuk game edukatif dan interaktif berbasis web maupun aplikasi.
+                    </p>
+                    <a href="#contact" class="text-charcoal font-medium inline-flex items-center group-hover:text-accent transition-colors">
+                        Learn More
+                        <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 2: Web & App Development -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-500 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-6 text-3xl text-accent group-hover:scale-110 transform transition-transform">💻</div>
+                    <h3 class="font-serif text-2xl mb-4 group-hover:text-accent transition-colors">Web & App Development</h3>
+                    <p class="text-gray-700 mb-6">
+                        Pembuatan website portofolio, aplikasi interaktif, dan dashboard berbasis Laravel 11 & Tailwind untuk personal maupun bisnis.
+                    </p>
+                    <a href="#contact" class="text-charcoal font-medium inline-flex items-center group-hover:text-accent transition-colors">
+                        Learn More
+                        <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 3: Digital Content & Branding -->
+                <div class="bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-500 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-6 text-3xl text-accent group-hover:scale-110 transform transition-transform">📱</div>
+                    <h3 class="font-serif text-2xl mb-4 group-hover:text-accent transition-colors">Digital Content & Branding</h3>
+                    <p class="text-gray-700 mb-6">
+                        Pembuatan konten promosi, desain visual, dan strategi branding untuk UMKM dan project kewirausahaan sekolah. Total views >20.000.
+                    </p>
+                    <a href="#contact" class="text-charcoal font-medium inline-flex items-center group-hover:text-accent transition-colors">
+                        Learn More
+                        <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white overflow-hidden">
+    <div class="container mx-auto px-6">
+        <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Client Testimonials</h2>
+        <p class="text-center max-w-xl mx-auto mb-16 text-gray-600" data-aos="fade-up" data-aos-delay="100">
+            Apa kata mereka tentang pengalaman bekerja bersama saya dalam berbagai proyek teknologi dan kreatif.
+        </p>
+
+        <div class="swiper testimonial-swiper" data-aos="fade-up" data-aos-delay="200">
+            <div class="swiper-wrapper">
+                <!-- Testimonial 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-cream p-8 md:p-12 rounded-sm">
+                        <div class="text-4xl font-serif text-accent mb-6">"</div>
+                        <p class="text-gray-700 mb-8 italic text-lg">
+                            Naura adalah siswa yang sangat berdedikasi dan terorganisir. Ia mampu memimpin tim dengan komunikasi yang efektif dan memastikan semua target tercapai tepat waktu, terutama saat mengembangkan <em>game edukasi islami</em>.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-full mr-4 border-2 border-white bg-accent text-white">
+                                <i class="fas fa-chalkboard-teacher text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Bu Delika</h4>
+                                <p class="text-sm text-accent">Wali Kelas, SMKN 01 Ciomas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-cream p-8 md:p-12 rounded-sm">
+                        <div class="text-4xl font-serif text-accent mb-6">"</div>
+                        <p class="text-gray-700 mb-8 italic text-lg">
+                            Saya sangat terkesan dengan portofolio website yang dibuat Naura menggunakan Laravel. Desainnya clean, responsif, dan menampilkan identitas dirinya dengan profesional. Cocok untuk siswa SMK yang ingin showcase kemampuan.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-full mr-4 border-2 border-white bg-accent text-white">
+                                <i class="fas fa-laptop-code text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Pak Wanda</h4>
+                                <p class="text-sm text-accent">Mentor Web Design & Game Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="swiper-slide">
+                    <div class="bg-cream p-8 md:p-12 rounded-sm">
+                        <div class="text-4xl font-serif text-accent mb-6">"</div>
+                        <p class="text-gray-700 mb-8 italic text-lg">
+                            Naura berhasil membuat konten kewirausahaan yang tidak hanya informatif tapi juga menarik secara visual. Salah satu videonya bahkan tembus lebih dari 50.000 views di platform media sosial!
+                        </p>
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-full mr-4 border-2 border-white bg-accent text-white">
+                                <i class="fas fa-lightbulb text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Pak Ridwan</h4>
+                                <p class="text-sm text-accent">Guru Kewirausahaan, SMKN 01 Ciomas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination mt-8"></div>
+            <div class="swiper-button-next hidden md:flex"></div>
+            <div class="swiper-button-prev hidden md:flex"></div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- Instagram Feed Section -->
+    <section class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <h2 class="font-serif text-4xl mb-4 text-center" data-aos="fade-up">Instagram</h2>
+            <p class="text-center max-w-xl mx-auto mb-16 text-gray-600" data-aos="fade-up" data-aos-delay="100">Follow me for behind-the-scenes content and daily inspiration.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <a href="https://www.instagram.com/nauraaasyura/" class="block overflow-hidden hover-effect filter-grayscale" data-aos="fade-up" data-aos-delay="100">
+                    <img src="instagram-1.jpeg" alt="Instagram Post" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <div class="text-white flex">
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                <span>254</span>
+                            </div>
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                </svg>
+                                <span>42</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/nauraaasyura/" class="block overflow-hidden hover-effect filter-grayscale" data-aos="fade-up" data-aos-delay="150">
+                    <img src="instagram-2.jpeg" alt="Instagram Post" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <div class="text-white flex">
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                <span>189</span>
+                            </div>
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                </svg>
+                                <span>32</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/nauraaasyura/" class="block overflow-hidden hover-effect filter-grayscale" data-aos="fade-up" data-aos-delay="200">
+                    <img src="instagram-3.jpeg" alt="Instagram Post" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <div class="text-white flex">
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                <span>321</span>
+                            </div>
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                </svg>
+                                <span>56</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/nauraaasyura/" class="block overflow-hidden hover-effect filter-grayscale" data-aos="fade-up" data-aos-delay="250">
+                    <img src="instagram-4.jpeg" alt="Instagram Post" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <div class="text-white flex">
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                <span>243</span>
+                            </div>
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                </svg>
+                                <span>48</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/nauraaasyura/" class="block overflow-hidden hover-effect filter-grayscale" data-aos="fade-up" data-aos-delay="300">
+                    <img src="instagram-5.jpeg" alt="Instagram Post" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <div class="text-white flex">
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                <span>178</span>
+                            </div>
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                </svg>
+                                <span>28</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/nauraaasyura/" class="block overflow-hidden hover-effect filter-grayscale" data-aos="fade-up" data-aos-delay="350">
+                    <img src="instagram-6.jpeg" alt="Instagram Post" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <div class="text-white flex">
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                <span>297</span>
+                            </div>
+                            <div class="mx-2 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                </svg>
+                                <span>51</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="text-center mt-10" data-aos="fade-up">
+                <a href="https://www.instagram.com/nauraaasyura/" class="relative inline-flex items-center justify-center px-8 py-3 border border-charcoal text-charcoal group overflow-hidden transition duration-300 hover:text-cream">
+                    <!-- Background overlay -->
+                    <span class="absolute inset-0 bg-charcoal scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
+
+                    <!-- Content inside the button -->
+                    <span class="relative z-10 flex items-center space-x-2">
+                        <span class="tracking-wider text-sm font-medium">FOLLOW @nauraaasyura</span>
+                        <svg class="w-5 h-5 text-inherit" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h2 class="font-serif text-4xl mb-8 relative">
+                        Get In Touch
+                        <span class="block w-24 h-1 bg-accent mt-4"></span>
+                    </h2>
+                    <p class="mb-8 text-gray-700">Interested in collaboration? Contact my team to discuss availability and project details.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start group hover:bg-cream p-4 transition-colors duration-300 rounded-sm cursor-pointer">
+                            <div class="mr-4 mt-1 text-accent">
+                                <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Email</h4>
+                                <a href="mailto:contact@sophiaelle.com" class="text-gray-600 hover:text-accent transition-colors group-hover:text-accent">syuramazaya631@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start group hover:bg-cream p-4 transition-colors duration-300 rounded-sm cursor-pointer">
+                            <div class="mr-4 mt-1 text-accent">
+                                <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Contact</h4>
+                                <a href="tel:+15551234567" class="text-gray-600 hover:text-accent transition-colors group-hover:text-accent">+62 831-9836-7508</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start group hover:bg-cream p-4 transition-colors duration-300 rounded-sm cursor-pointer">
+                            <div class="mr-4 mt-1 text-accent">
+                                <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Location</h4>
+                                <p class="text-gray-600 group-hover:text-accent transition-colors">My location</p>
+                                <p class="text-gray-600 group-hover:text-accent transition-colors">Sayyidah Village,ciherang,dramaga</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-medium mb-4">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/nauraaasyura/" class="w-12 h-12 rounded-full flex items-center justify-center border border-charcoal text-charcoal hover:bg-charcoal hover:text-cream transition-all duration-300 group">
+                                <i class="fab fa-instagram text-xl group-hover:scale-110 transform transition-transform"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@akusyura18" class="w-12 h-12 rounded-full flex items-center justify-center border border-charcoal text-charcoal hover:bg-charcoal hover:text-cream transition-all duration-300 group">
+                                <i class="fab fa-tiktok text-xl group-hover:scale-110 transform transition-transform"></i>
+                            </a>
+                            <a href="https://wa.me/6283198367508" class="w-12 h-12 rounded-full flex items-center justify-center border border-charcoal text-charcoal hover:bg-charcoal hover:text-cream transition-all duration-300 group">
+                                <i class="fab fa-whatsapp text-xl group-hover:scale-110 transform transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <form id="contactForm" class="space-y-6 contact-form">
+                        <div class="form-group">
+                            <label for="name" class="block text-sm uppercase tracking-wider mb-2 text-gray-600">Name</label>
+                            <input type="text" id="name" class="w-full border-b border-gray-300 py-2 px-3 focus:outline-none focus:border-accent bg-transparent transition-colors duration-300" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="block text-sm uppercase tracking-wider mb-2 text-gray-600">Email</label>
+                            <input type="email" id="email" class="w-full border-b border-gray-300 py-2 px-3 focus:outline-none focus:border-accent bg-transparent transition-colors duration-300" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="block text-sm uppercase tracking-wider mb-2 text-gray-600">Subject</label>
+                            <input type="text" id="subject" class="w-full border-b border-gray-300 py-2 px-3 focus:outline-none focus:border-accent bg-transparent transition-colors duration-300" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="block text-sm uppercase tracking-wider mb-2 text-gray-600">Message</label>
+                            <textarea id="message" rows="5" class="w-full border-b border-gray-300 py-2 px-3 focus:outline-none focus:border-accent bg-transparent transition-colors duration-300" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="w-full px-8 py-3 bg-charcoal text-cream hover:bg-accent transition-colors tracking-wider text-sm uppercase relative overflow-hidden group">
+                                <span class="relative z-10">Send Message</span>
+                                <span class="absolute inset-0 bg-accent scale-x-0 origin-left transform transition-transform duration-300 group-hover:scale-x-100"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="form-message hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-charcoal text-cream">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="font-serif text-2xl tracking-widest font-light">NAURA FIONI</a>
+                </div>
+                
+                <div class="flex flex-wrap justify-center space-x-6 md:space-x-10 text-sm tracking-wider">
+                    <a href="#about" class="hover:text-accent transition-colors py-2">ABOUT</a>
+                    <a href="#portfolio" class="hover:text-accent transition-colors py-2">PORTFOLIO</a>
+                    <a href="#experience" class="hover:text-accent transition-colors py-2">EXPERIENCE</a>
+                    <a href="#services" class="hover:text-accent transition-colors py-2">SERVICES</a>
+                    <a href="#contact" class="hover:text-accent transition-colors py-2">CONTACT</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <p>Last updated: July 18, 2025</p>
+                </div>
+                <div class="md:w-1/3 text-center my-4 md:my-0">
+                    <p>&copy; 2025 Naura Fioni. All rights reserved.</p>
+                </div>
+                <div class="md:w-1/3 text-center md:text-right">
+                    <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+                    <span class="mx-2">|</span>
+                    <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-charcoal/80 text-cream w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-accent transition-colors z-30 opacity-0 invisible transform translate-y-10 transition-all duration-300">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Mencegah form submit default
+
+            // Ambil nilai dari input
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            // Validasi dasar (opsional)
+            if (!name || !email || !subject || !message) {
+                alert("Harap isi semua kolom terlebih dahulu.");
+                return;
+            }
+
+            // Buat pesan yang rapi dengan baris baru
+            const fullMessage = `Halo, saya ${name}\nEmail: ${email}\n\nSaya ingin menghubungi Anda dengan subjek: ${subject}.\n\nPesan:\n${message}`;
+
+            // Nomor WhatsApp tujuan (format internasional, tanpa +)
+            const whatsappNumber = "6283198367508";
+
+            // Buka WhatsApp dengan pesan terisi
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`, "_blank");
+
+            // (Opsional) Reset form setelah submit
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
