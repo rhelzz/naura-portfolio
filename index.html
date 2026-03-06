@@ -40,6 +40,7 @@
     <meta name="application-name" content="Naura Fioni Portfolio">
     
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
@@ -226,65 +227,135 @@
                 </p>
             </div>
 
-            <!-- Brand Logo & Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-16">
-                <!-- Brand Logo -->
-                <div class="md:col-span-1 text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="floating-brand">
-                        <!-- Logo dengan font yang bagus -->
-                        <div class="brand-logo-text mx-auto w-32 h-32 md:w-36 md:h-36 bg-gradient-to-br from-accent to-beige rounded-full flex items-center justify-center shadow-lg">
-                            <span class="text-white font-serif text-2xl md:text-3xl font-bold tracking-wider">SUNDAY</span>
-                        </div>
-                    </div>
-                    <h3 class="font-serif text-xl mt-4 text-charcoal">Brand Partner</h3>
-                </div>
-
-                <!-- Brand Stats -->
-                <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div class="brand-stats" data-aos="fade-up" data-aos-delay="200">
-                        <div class="brand-stats-number counter" data-target="50">0</div>
-                        <div class="brand-stats-label">K+ Views</div>
-                    </div>
-                    <div class="brand-stats" data-aos="fade-up" data-aos-delay="300">
-                        <div class="brand-stats-number counter" data-target="134">0</div>
-                        <div class="brand-stats-label">Content Created</div>
-                    </div>
-                    <div class="brand-stats" data-aos="fade-up" data-aos-delay="400">
-                        <div class="brand-stats-number counter" data-target="85">0</div>
-                        <div class="brand-stats-label">% Engagement</div>
-                    </div>
+            <!-- Brand Tabs -->
+            <div class="flex justify-center mb-10" data-aos="fade-up">
+                <div class="brand-tabs inline-flex bg-beige/30 rounded-full p-1.5 gap-2">
+                    <button class="brand-tab active px-6 py-3 rounded-full text-sm font-medium tracking-wider transition-all duration-300" data-brand="sunday">
+                        SUNDAY
+                    </button>
+                    <button class="brand-tab px-6 py-3 rounded-full text-sm font-medium tracking-wider transition-all duration-300" data-brand="brand2">
+                        GELD IMPORTANT
+                    </button>
                 </div>
             </div>
 
-            <!-- Ambassador Photos -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Photo 1 -->
-                <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="100">
-                    <div class="brand-collaboration-badge">Collaboration</div>
-                    <img src="brand/brand-1.jpg" alt="Brand Ambassador Photo 1">
-                    <div class="ambassador-overlay">
-                        <h4 class="font-serif text-lg mb-2">Product Launch Campaign</h4>
-                        <p class="text-sm opacity-90">Creating engaging content for new product introduction with authentic storytelling approach.</p>
+            <!-- Brand Content Container -->
+            <div class="brand-content-wrapper">
+                <!-- SUNDAY Brand Content -->
+                <div class="brand-content active" id="brand-sunday">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-16">
+                        <!-- Brand Logo -->
+                        <div class="md:col-span-1 text-center" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="floating-brand">
+                                <div class="brand-logo-text mx-auto w-32 h-32 md:w-36 md:h-36 bg-gradient-to-br from-accent to-beige rounded-full flex items-center justify-center shadow-lg">
+                                    <span class="text-white font-serif text-2xl md:text-3xl font-bold tracking-wider">SUNDAY</span>
+                                </div>
+                            </div>
+                            <h3 class="font-serif text-xl mt-4 text-charcoal">Brand Partner</h3>
+                        </div>
+
+                        <!-- Brand Stats -->
+                        <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <div class="brand-stats" data-aos="fade-up" data-aos-delay="200">
+                                <div class="brand-stats-number counter" data-target="50">0</div>
+                                <div class="brand-stats-label">K+ Views</div>
+                            </div>
+                            <div class="brand-stats" data-aos="fade-up" data-aos-delay="300">
+                                <div class="brand-stats-number counter" data-target="134">0</div>
+                                <div class="brand-stats-label">Content Created</div>
+                            </div>
+                            <div class="brand-stats" data-aos="fade-up" data-aos-delay="400">
+                                <div class="brand-stats-number counter" data-target="85">0</div>
+                                <div class="brand-stats-label">% Engagement</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ambassador Photos -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="100">
+                            <div class="brand-collaboration-badge">Collaboration</div>
+                            <img src="brand/brand-1.jpg" alt="Sunday Brand Ambassador Photo 1">
+                            <div class="ambassador-overlay">
+                                <h4 class="font-serif text-lg mb-2">Product Launch Campaign</h4>
+                                <p class="text-sm opacity-90">Creating engaging content for new product introduction with authentic storytelling approach.</p>
+                            </div>
+                        </div>
+                        <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="200">
+                            <div class="brand-collaboration-badge">Partnership</div>
+                            <img src="brand/brand-2.jpg" alt="Sunday Brand Ambassador Photo 2">
+                            <div class="ambassador-overlay">
+                                <h4 class="font-serif text-lg mb-2">Behind The Scenes</h4>
+                                <p class="text-sm opacity-90">Professional photoshoot session showcasing brand values and lifestyle integration.</p>
+                            </div>
+                        </div>
+                        <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="300">
+                            <div class="brand-collaboration-badge">Featured</div>
+                            <img src="brand/brand-3.jpg" alt="Sunday Brand Ambassador Photo 3">
+                            <div class="ambassador-overlay">
+                                <h4 class="font-serif text-lg mb-2">Social Media Campaign</h4>
+                                <p class="text-sm opacity-90">High-performance social content that generated exceptional engagement and brand awareness.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Photo 2 -->
-                <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="200">
-                    <div class="brand-collaboration-badge">Partnership</div>
-                    <img src="brand/brand-2.jpg" alt="Brand Ambassador Photo 2">
-                    <div class="ambassador-overlay">
-                        <h4 class="font-serif text-lg mb-2">Behind The Scenes</h4>
-                        <p class="text-sm opacity-90">Professional photoshoot session showcasing brand values and lifestyle integration.</p>
-                    </div>
-                </div>
+                <!-- BRAND 2 Content -->
+                <div class="brand-content" id="brand-brand2">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center mb-16">
+                        <!-- Brand Logo -->
+                        <div class="md:col-span-1 text-center">
+                            <div class="floating-brand">
+                                <div class="brand-logo-text mx-auto w-32 h-32 md:w-36 md:h-36 bg-gradient-to-br from-rose-400 to-pink-300 rounded-full flex items-center justify-center shadow-lg">
+                                    <span class="text-white font-serif text-2xl md:text-3xl font-bold tracking-wider">GELD</span>
+                                </div>
+                            </div>
+                            <h3 class="font-serif text-xl mt-4 text-charcoal">GELD IMPORTANT</h3>
+                        </div>
 
-                <!-- Photo 3 -->
-                <div class="ambassador-photo" data-aos="fade-up" data-aos-delay="300">
-                    <div class="brand-collaboration-badge">Featured</div>
-                    <img src="brand/brand-3.jpg" alt="Brand Ambassador Photo 3">
-                    <div class="ambassador-overlay">
-                        <h4 class="font-serif text-lg mb-2">Social Media Campaign</h4>
-                        <p class="text-sm opacity-90">High-performance social content that generated exceptional engagement and brand awareness.</p>
+                        <!-- Brand Stats -->
+                        <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <div class="brand-stats">
+                                <div class="brand-stats-number">25K+</div>
+                                <div class="brand-stats-label">Views</div>
+                            </div>
+                            <div class="brand-stats">
+                                <div class="brand-stats-number">50+</div>
+                                <div class="brand-stats-label">Content Created</div>
+                            </div>
+                            <div class="brand-stats">
+                                <div class="brand-stats-number">80%</div>
+                                <div class="brand-stats-label">Engagement</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ambassador Photos -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="ambassador-photo">
+                            <div class="brand-collaboration-badge">Collaboration</div>
+                            <img src="brand/brand-4.jpg" alt="Brand 2 Ambassador Photo 1">
+                            <div class="ambassador-overlay">
+                                <h4 class="font-serif text-lg mb-2">Premium Product Launch</h4>
+                                <p class="text-sm opacity-90">Creating engaging content for GELD IMPORTANT product introduction with authentic storytelling approach.</p>
+                            </div>
+                        </div>
+                        <div class="ambassador-photo">
+                            <div class="brand-collaboration-badge">Partnership</div>
+                            <img src="brand/brand-5.jpg" alt="Brand 2 Ambassador Photo 2">
+                            <div class="ambassador-overlay">
+                                <h4 class="font-serif text-lg mb-2">Behind The Scenes</h4>
+                                <p class="text-sm opacity-90">Professional photoshoot session showcasing GELD IMPORTANT brand values and lifestyle integration.</p>
+                            </div>
+                        </div>
+                        <div class="ambassador-photo">
+                            <div class="brand-collaboration-badge">Featured</div>
+                            <img src="brand/brand-6.jpg" alt="Brand 2 Ambassador Photo 3">
+                            <div class="ambassador-overlay">
+                                <h4 class="font-serif text-lg mb-2">Premium Social Campaign</h4>
+                                <p class="text-sm opacity-90">High-performance social content that generated exceptional engagement and brand awareness for GELD IMPORTANT.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

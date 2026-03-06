@@ -431,3 +431,42 @@ h1, h2, h3, h4, h5 {
 .mobile-menu .mobile-nav-link:hover::after {
     width: 100%;
 }
+
+/* Brand Tabs */
+.brand-tabs {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.brand-tab {
+    color: #666;
+    background: transparent;
+    cursor: pointer;
+}
+
+.brand-tab:hover {
+    color: #333;
+}
+
+.brand-tab.active {
+    background: linear-gradient(135deg, #D4A373, #E6DED1);
+    color: white;
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+}
+
+/* Brand Content Switching */
+.brand-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.brand-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.brand-content-wrapper {
+    position: relative;
+}

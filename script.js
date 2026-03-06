@@ -431,4 +431,31 @@ document.addEventListener('DOMContentLoaded', function() {
     imageRevealElements.forEach(element => {
         imageRevealObserver.observe(element);
     });
+
+    // Brand Tab Switching
+    const brandTabs = document.querySelectorAll('.brand-tab');
+    const brandContents = document.querySelectorAll('.brand-content');
+
+    brandTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const brandId = this.getAttribute('data-brand');
+            
+            // Remove active class from all tabs and contents
+            brandTabs.forEach(t => t.classList.remove('active'));
+            brandContents.forEach(c => {
+                c.classList.remove('active');
+                c.style.display = 'none';
+            });
+            
+            // Add active class to clicked tab and corresponding content
+            this.classList.add('active');
+            const targetContent = document.getElementById(`brand-${brandId}`);
+            if (targetContent) {
+                targetContent.style.display = 'block';
+                // Trigger reflow for animation
+                targetContent.offsetHeight;
+                targetContent.classList.add('active');
+            }
+        });
+    });
 });
