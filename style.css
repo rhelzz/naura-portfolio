@@ -125,30 +125,49 @@ h1, h2, h3, h4, h5 {
 .hover-effect {
     position: relative;
     overflow: hidden;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
 }
+
+.hover-effect:hover {
+    box-shadow: 0 8px 25px rgba(212, 163, 115, 0.2);
+}
+
 .hover-effect img {
-    transition: transform 0.75s ease;
-    height: 250px; /* Sesuaikan tinggi sesuai kebutuhan Anda */
-}
-.hover-effect:hover img {
-    transform: scale(1.05);
-}
-.hover-effect .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(51, 51, 51, 0.8);
-    overflow: hidden;
+    transition: transform 0.6s ease;
     width: 100%;
-    height: 0;
-    transition: .5s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
 }
-.hover-effect:hover .overlay {
-    height: 100%;
+
+/* Custom object-position for specific portfolio items */
+.portfolio-grid .portfolio-item:nth-child(1) .hover-effect img,
+.portfolio-grid .portfolio-item:nth-child(4) .hover-effect img,
+.portfolio-grid .portfolio-item:nth-child(7) .hover-effect img {
+    object-position: center top;
+}
+
+.portfolio-grid .portfolio-item:nth-child(3) .hover-effect img,
+.portfolio-grid .portfolio-item:nth-child(6) .hover-effect img,
+.portfolio-grid .portfolio-item:nth-child(9) .hover-effect img {
+    object-position: center 35%;
+}
+
+.hover-effect:hover img {
+    transform: scale(1.15);
+}
+
+/* Remove overlay effects */
+.hover-effect::before {
+    display: none;
+}
+
+.hover-effect .overlay {
+    display: none;
 }
 
 /* Scroll-triggered animations */
@@ -170,9 +189,9 @@ h1, h2, h3, h4, h5 {
 .mobile-menu.active {
     transform: translateX(0);
 }
-        .portfolio-item {
-            background-color: white; /* Ensure background color for items */
-        }
+.portfolio-item {
+    background-color: transparent;
+}
 
 .hero-text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -200,6 +219,9 @@ h1, h2, h3, h4, h5 {
 }
 .view-all-btn {
     display: none; /* Menyembunyikan tombol secara default */
+    border-radius: 4px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
 }
 
 /* Brand Ambassador Section */
@@ -453,6 +475,73 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
 }
 
+/* Mobile Responsive for Brand Tabs */
+@media (max-width: 768px) {
+    .brand-tabs {
+        display: flex !important;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem;
+        gap: 0.5rem;
+        max-width: 100%;
+        width: 100%;
+        border-radius: 1rem !important;
+    }
+    
+    .brand-tab {
+        width: 100%;
+        padding: 0.875rem 1rem !important;
+        font-size: 0.8rem !important;
+        text-align: center;
+        border-radius: 0.75rem !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .brand-tab {
+        padding: 0.65rem 1.25rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Portfolio Filter Buttons */
+.portfolio-filter-btn {
+    color: #666;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.portfolio-filter-btn:hover {
+    color: #D4A373;
+    border-color: rgba(212, 163, 115, 0.3);
+}
+
+.portfolio-filter-btn.active {
+    color: #D4A373;
+    font-weight: 600;
+    border-bottom: 2px solid #D4A373;
+}
+
+/* Mobile Responsive for Portfolio Filters */
+@media (max-width: 768px) {
+    .portfolio-filter-btn {
+        padding: 0.5rem 0.875rem !important;
+        font-size: 0.7rem !important;
+        white-space: nowrap;
+        letter-spacing: 0.05em !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-filter-btn {
+        padding: 0.5rem 0.625rem !important;
+        font-size: 0.625rem !important;
+        letter-spacing: 0.025em !important;
+    }
+}
+
 /* Brand Content Switching */
 .brand-content {
     display: none;
@@ -469,4 +558,39 @@ h1, h2, h3, h4, h5 {
 
 .brand-content-wrapper {
     position: relative;
+}
+
+/* AOS Fallback - ensure animations work properly */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out !important;
+}
+
+/* Force AOS elements to be visible after animation */
+[data-aos].aos-animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Ensure sections are always in normal flow */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Override AOS initial state */
+[data-aos]:not(.aos-animate) {
+    opacity: 0;
+}
+
+/* Make sure parent containers don't clip AOS detection */
+.container {
+    overflow: visible !important;
+}
+
+/* Ensure AOS can detect scroll position properly */
+html {
+    overflow-y: scroll !important;
+    scroll-behavior: smooth;
 }

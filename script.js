@@ -1,11 +1,71 @@
 // Initialize AOS (Animate On Scroll)
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
+    // Custom scroll animation - bypassing AOS issues
+    const initScrollAnimations = () => {
+        // Set initial hidden state for all AOS elements first
+        document.querySelectorAll('[data-aos]').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(40px)';
+            el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+            
+            // Add delay if specified
+            const delay = el.getAttribute('data-aos-delay');
+            if (delay) {
+                el.style.transitionDelay = delay + 'ms';
+            }
+        });
+
+        // Wait a bit before starting to observe (let page render first)
+        setTimeout(() => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -100px 0px', // Element must be 100px into viewport
+                threshold: 0.15
+            };
+
+            const observerCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Small delay before animating to make it visible
+                        setTimeout(() => {
+                            entry.target.classList.add('aos-animate');
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, 50);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Observe all AOS elements
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                observer.observe(el);
+            });
+        }, 300); // Wait 300ms after DOM ready
+    };
+
+    // Initialize AOS as backup
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 700,
+            once: true,
+            offset: 120,
+            disable: false
+        });
+    }
+
+    // Run custom scroll animations after page loads
+    window.addEventListener('load', initScrollAnimations);
+
+    // Fallback: force visibility after 5 seconds
+    setTimeout(() => {
+        document.querySelectorAll('[data-aos]').forEach(el => {
+            el.classList.add('aos-animate');
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+    }, 5000);
 
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -209,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             const viewAllBtn = document.getElementById('viewAllBtn');
-            const initialVisibleItems = 3;
+            const initialVisibleItems = 5;
             if (filteredItems.length > initialVisibleItems) {
                 filteredItems.forEach((item, index) => {
                     if (index < initialVisibleItems) {
@@ -236,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Show/hide "View All Work"/"View More"/"View Less" button based on the number of portfolio items
     const viewAllBtn = document.getElementById('viewAllBtn');
-    const initialVisibleItems = 3;
+    const initialVisibleItems = 5;
 
     // Initially hide items beyond the initial visible count
     if (portfolioItems.length > initialVisibleItems) {
